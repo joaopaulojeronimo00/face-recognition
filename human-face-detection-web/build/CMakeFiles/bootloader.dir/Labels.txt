@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+C:/Workspace/esp/human-face-detection-web/build/CMakeFiles/bootloader
+C:/Workspace/esp/human-face-detection-web/build/CMakeFiles/bootloader.rule
+C:/Workspace/esp/human-face-detection-web/build/CMakeFiles/bootloader-complete.rule
+C:/Workspace/esp/human-face-detection-web/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+C:/Workspace/esp/human-face-detection-web/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+C:/Workspace/esp/human-face-detection-web/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+C:/Workspace/esp/human-face-detection-web/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+C:/Workspace/esp/human-face-detection-web/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+C:/Workspace/esp/human-face-detection-web/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+C:/Workspace/esp/human-face-detection-web/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
