@@ -1,22 +1,21 @@
-#pip install opencv-contrib-python #para caso seja necessário pegar uma versão antiga do open-cv
 import cv2
 import numpy as np
 import os
 
-# 🔹 Endpoint HTTP da câmera (exemplo: ESP32-CAM)
+# Coloque aqui o ip recebido pelo ESP, ele aparecerá no Monitor
 STREAM_URL = "http://192.168.3.37:81/stream"  # Substitua pelo seu IP e porta
 
-# 🔹 Inicializa o detector de rostos
+# inicializa o detector de rostos
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
 
-# 🔹 Criando o reconhecedor facial LBPH
+# criando o reconhecedor facial LBPH
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 
-# 🔹 Diretório temporário para salvar imagens capturadas
+# diretório temporário para salvar imagens capturadas
 SAVE_DIR = "captured_faces"
 os.makedirs(SAVE_DIR, exist_ok=True)
 
-# 🔹 Função para capturar imagens da transmissão ao vivo
+# função para capturar imagens da transmissão ao vivo
 def capture_faces(stream_url, person_id, num_samples=20):
     cap = cv2.VideoCapture(stream_url)
     count = 0
@@ -47,7 +46,7 @@ def capture_faces(stream_url, person_id, num_samples=20):
     cap.release()
     cv2.destroyAllWindows()
 
-# 🔹 Função para treinar o modelo com as imagens capturadas
+# função para treinar o modelo com as imagens capturadas
 def train_model():
     face_samples = []
     face_ids = []
@@ -68,7 +67,7 @@ def train_model():
     recognizer.write("trained_model.yml")
     print("Treinamento concluído!")
 
-# 🔹 Função para reconhecimento facial na transmissão ao vivo
+# função para reconhecimento facial na transmissão ao vivo
 def recognize_faces(stream_url):
     recognizer.read("trained_model.yml")
     cap = cv2.VideoCapture(stream_url)
@@ -99,7 +98,7 @@ def recognize_faces(stream_url):
     cap.release()
     cv2.destroyAllWindows()
 
-# 🔹 Fluxo Principal
+# fluxo Principal
 def main():
     while True:
         print("\n===== MENU =====")
